@@ -5,7 +5,7 @@ shinyUI(fluidPage(
   tabsetPanel(
     tabPanel("Datos",
              verticalLayout(
-             fileInput("fileD", "Elegir fichero de datos (.csv o .rds)",accept = c(".csv",".rds")),
+             fileInput("fileD", "Elegir fichero de datos (.csv, .rds o .RData)",accept = c(".csv",".rds",".RData")),
              htmlOutput("selectVars"),
              DT::dataTableOutput(outputId="data"))),
     tabPanel("1. Análisis multivariante",
