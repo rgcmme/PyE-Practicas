@@ -3,4 +3,5 @@ Repositorio para el desarrollo de aplicaciones interactivas para prácticas de p
 # Colaboradores
 
 * Marco Alberto Benjumeda Barquita  
+* Alba Fernández Izquierdo
 * Raúl García Castro
