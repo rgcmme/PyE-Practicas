@@ -32,7 +32,11 @@ shinyUI(fluidPage(
         tabPanel("2.2 Resumen estadístico",verticalLayout(uiOutput("sivar2"),htmlOutput(outputId="resum"))),
         tabPanel("2.3. Diagrama de tallo-hojas",verticalLayout(uiOutput("sivar3"),verbatimTextOutput("stemleaf"))),
         tabPanel("2.4. Histograma",verticalLayout(uiOutput("sivar4"),plotOutput(outputId="hist"))),
-        tabPanel("2.5. Boxplot",verticalLayout(uiOutput("sivar5"),plotOutput(outputId="boxp")))
+        tabPanel("2.5 Curva de frecuencias relativas acumuladas", verticalLayout(uiOutput("sivar5"),
+                                                                                 uiOutput("num_classes"),
+                                                                                 plotOutput(outputId="accum"))
+                 ),
+        tabPanel("2.6. Boxplot",verticalLayout(uiOutput("sivar6"),plotOutput(outputId="boxp")))
       )
     ))
 ))
