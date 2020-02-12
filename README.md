@@ -4,4 +4,5 @@ Repositorio para el desarrollo de aplicaciones interactivas para prácticas de p
 
 * Marco Alberto Benjumeda Barquita  
 * Alba Fernández Izquierdo
+* David Atienza González 
 * Raúl García Castro
