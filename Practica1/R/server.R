@@ -147,7 +147,7 @@ shinyServer(function(input, output,session) {
   })
 
   output$sivar6 <- renderUI({
-    numeric_cols <- subset(names(data), sapply(data, is.numeric))
+    numeric_cols <- subset(names(rv_allValues$data), sapply(rv_allValues$data, is.numeric))
     selected <- ifelse(rv_allValues$varname %in% numeric_cols, rv_allValues$varname, numeric_cols[1])
     selectInput(inputId="svar6",label="Variable a analizar:",choices=numeric_cols,selected = selected)
   })
@@ -169,7 +169,7 @@ shinyServer(function(input, output,session) {
   })
   
   output$resum <- renderText({
-    numeric_cols <- subset(names(data), sapply(data, is.numeric))
+    numeric_cols <- subset(names(rv_allValues$data), sapply(rv_allValues$data, is.numeric))
     numeric_data <- rv_allValues$data[,numeric_cols]
     # df <- data.frame(do.call(rbind,lapply(1:ncol(rv_numeric$data), function(x) 
     # c(summary(rv_numeric$data[,x]),round(sd(rv_numeric$data[,x]),3),round(sd(rv_numeric$data[,x])/mean(rv_numeric$data[,x]),3),round(skewness(rv_numeric$data[,x]),3),round(kurtosis(rv_numeric$data[,x]),3)))))
@@ -191,7 +191,7 @@ shinyServer(function(input, output,session) {
   })
   
   output$freq <- renderDataTable({
-    numeric_cols <- subset(names(data), sapply(data, is.numeric))
+    numeric_cols <- subset(names(rv_allValues$data), sapply(rv_allValues$data, is.numeric))
 
     if (!(rv_allValues$varname %in% numeric_cols)) {
       rv_allValues$varname <- numeric_cols[1]
