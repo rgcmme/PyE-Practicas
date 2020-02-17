@@ -153,7 +153,7 @@ shinyServer(function(input, output,session) {
   })
 
   output$num_classes <- renderUI({
-    sliderInput(inputId="nclasses",label="Número de clases",value=5,min=2,max=rv_allValues$maxd,step=1)
+    sliderInput(inputId="nclasses",label="Número de clases",value=50,min=2,max=rv_allValues$maxd,step=1)
   })
   
   output$stemleaf <- renderPrint({
@@ -212,15 +212,18 @@ shinyServer(function(input, output,session) {
     numeric_data <- rv_allValues$data[,numeric_cols]
 
     d <- as.data.frame(table(x = cut(numeric_data[,rv_allValues$varname], breaks=rv_allValues$nclasses)))
-    plot(d$x,
+    plot(
          cumsum(prop.table(d$Freq)),
          ylim=c(0,1),
          xlab=rv_allValues$varname,
          xaxt="n",
          ylab="Frecuencia relativa acumulada")
     axis(side=1, at=seq(1,length(d$x)), labels=levels(d$x))
-    lines(d$x,
-          cumsum(prop.table(d$Freq)), col="blue", lwd=2)
+    xspline(d$x,
+          cumsum(prop.table(d$Freq)), col="blue", lwd=1)
   })
+  
+  
+  
   
 })
