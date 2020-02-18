@@ -184,7 +184,7 @@ shinyServer(function(input, output,session) {
            "<b>Máximo</b>: ",summ[[6]],"<br>","<br>",
            "<b>Desviación típica</b>: ",round(sd(numeric_data[,rv_allValues$varname]),3),"<br>","<br>",
            "<b>Desviación típica/Media</b>: ",round(sd(numeric_data[,rv_allValues$varname])/mean(numeric_data[,rv_allValues$varname]),3),"<br>","<br>",
-           "<b>Apuntamiento</b>: ",round(skewness(numeric_data[,rv_allValues$varname]),3),"<br>","<br>",
+           "<b>Asimetría</b>: ",round(skewness(numeric_data[,rv_allValues$varname]),3),"<br>","<br>",
            "<b>Curtosis</b>: ",round(kurtosis(numeric_data[,rv_allValues$varname])))
     # ,"Min.","1st Qu.","Median","Mean","3rd Qu.","Max.","Sd","Sd/Mean","Skewness","Kurtosis")
     # df
