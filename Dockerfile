@@ -6,6 +6,7 @@ RUN rm -rf /srv/shiny-server/*
 WORKDIR /srv/shiny-server/
 
 COPY ./Practica1 ./Practica1
+COPY ./Practica2 ./Practica2
 
 RUN R -e "install.packages('car')"
 RUN R -e "install.packages('e1071')"
