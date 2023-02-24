@@ -1,7 +1,7 @@
 library(shiny)
 
 shinyServer(function(input, output,session) {
-  library(aplpack)
+  #library(aplpack)
   library(e1071)
   library(tools)
   library(corrplot)
@@ -157,7 +157,7 @@ shinyServer(function(input, output,session) {
   })
   
   output$stemleaf <- renderPrint({
-    stem.leaf(rv_allValues$data[,rv_allValues$varname])
+    stem(rv_allValues$data[,rv_allValues$varname],scale=2)
   })
   
   output$hist <- renderPlot({
