@@ -13,5 +13,7 @@ RUN R -e "install.packages('e1071')"
 RUN R -e "install.packages('DT')"
 RUN R -e "install.packages('corrplot')"
 RUN R -e "install.packages('tools')"
-
-
+RUN R -e "install.packages('aplpack')"
+RUN R -e "install.packages('MASS')"
+RUN R -e "install.packages('aplpack')"
+RUN R -e "install.packages('TeachingDemos')"
